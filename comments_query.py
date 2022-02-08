@@ -37,9 +37,8 @@ def total_number_of_comment_in_year(collection,given_year):
     dic= {  "01":0,"02":0,  "03": 0, "04": 0,"05": 0,"06": 0,"07": 0,"08": 0, "09": 0,"10": 0,"11": 0,"12": 0
     }
     for i in collection.find():
-        dte = (i['date']['$date']['$numberLong'])
-        datetime_obj = datetime.strptime(dte,  "%d%m%y%H%M")
-
+        dte = i['date']['$date']['$numberLong']
+        datetime_obj = datetime.fromtimestamp(float(dte) / 1e3)
         date = datetime_obj.date()
 
         x = str(date)
