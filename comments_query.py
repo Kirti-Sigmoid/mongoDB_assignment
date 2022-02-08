@@ -66,24 +66,3 @@ print("All comment in the year",year)
 total_number_of_comment_in_year(collection,year)
 
 
-# top_10= collection.aggregate([
-#
-#     {"$group": {"_id": { "movies_id": "$movie_id"},"total_comment":{"$sum":1}}},
-#     {"$sort": {"total_comment": -1}},
-#     {"$project": {"movies_id": 1,"total_comment":1}},
-#     {"$limit": 10}
-# ])
-#
-# mov=list(top_10)
-# mov_id=[]
-# for i in range(0,len(mov)):
-#     oid=mov[i]['_id']['movies_id']['$oid']
-#     obj=ObjectId(oid)
-#     mov_id.append(obj)
-#
-# collection1=db.movies
-#
-# for id1 in mov_id:
-#     val=collection1.find({"_id":id1},{"_id":0,"title":1})
-#     for title in val:
-#         print(title)
