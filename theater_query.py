@@ -20,7 +20,6 @@ def theatres_nearby_given_coordinates(collections,coord):
     a = dict(sorted(dic.items()))
     ans = []
     for k,v in a.items():
-        ans += v
         if len(ans)+len(v)>10:
             x=10-len(ans)
             ans += v[0:x]
@@ -46,4 +45,5 @@ for i in res:
 # core2=input("Enter coordinate 2")
 nearby_theatre = theatres_nearby_given_coordinates(collection,['-93.24565', '44.85466'])
 print("Top 10 theatres nearby given coordinates eg: ['-93.24565', '44.85466']")
-print(nearby_theatre)
+for i in nearby_theatre:
+    print(i)
